@@ -8,10 +8,10 @@ export default defineConfig({
   plugins: [react()],
   base: "/weading/",
   build: {
-    outDir: resolve(__dirname, 'dist'), // Output directory
+    outDir: new URL('dist', import.meta.url).pathname,
     rollupOptions: {
       output: {
-        entryFileNames: 'bundle.js', // Output filename for main bundle
+        entryFileNames: 'bundle.js',
       }
     }
   }
