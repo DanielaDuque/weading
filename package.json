@@ -1,13 +1,13 @@
 {
-  "name": "weading",
+  "name": "wedding",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://danieladuque.github.io/weading",
+  "homepage": "https://danieladuque.github.io/wedding",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint weading",
+    "lint": "eslint wedding",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

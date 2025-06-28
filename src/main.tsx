@@ -6,11 +6,11 @@ import {createRoot} from "react-dom/client";
 
 const router = createBrowserRouter([
     {
-        path: "/vite-react-router/",
+        path: "/wedding/",
         element: <App />,
         children: [
             {
-                path: "/vite-react-router/",
+                path: "/wedding/",
                 element: <Home />,
             }
         ],
