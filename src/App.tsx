@@ -1,18 +1,17 @@
+import { Link, Outlet } from "react-router-dom";
 
-import './App.css'
-import {BrowserRouter, Route, Routes} from "react-router-dom";
-import Home from "./pages/Home.tsx";
+export default function App() {
+    return (
+        <>
+            [FIXED_CONTENT]
 
-function App() {
+            <nav>
+                <Link to="/vite-react-router/">Home</Link>
+            </nav>
 
-  return (
-      <BrowserRouter basename="/weading">
-          <Routes>
-              <Route path="/" element={<Home/>} />
-              {/* Add more routes here */}
-          </Routes>
-      </BrowserRouter>
-  )
+            <Outlet />
+
+            [FIXED_CONTENT]
+        </>
+    );
 }
-
-export default App
