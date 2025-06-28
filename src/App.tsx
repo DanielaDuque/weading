@@ -1,17 +1,24 @@
-import { Link, Outlet } from "react-router-dom";
+// src/App.tsx
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import AppTheme from './Theme';
+import './styles/main.scss';
+import Home from "./pages/Home.tsx";
 
-export default function App() {
+function App() {
     return (
-        <>
-            [FIXED_CONTENT]
-
-            <nav>
-                <Link to="/vite-react-router/">Home</Link>
-            </nav>
-
-            <Outlet />
-
-            [FIXED_CONTENT]
-        </>
+        <AppTheme>
+            <Router basename={'wedding'}>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    {/*<Route path="/about" element={<AboutPage />} />*/}
+                    {/*<Route path="/contact" element={<ContactPage />} />*/}
+                    {/*<Route path="/ceremony" element={<CeremonyPage />} />*/}
+                </Routes>
+            </Router>
+        </AppTheme>
     );
 }
+
+export default App;

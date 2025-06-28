@@ -1,0 +1,25 @@
+// _variables.scss
+
+// Color Palette
+$primary-pink: #F2A2BA;
+$secondary-pink: #F9D0DF;
+$green-accent: #8AA890;
+$blue-grey-sky: #B0C0C8;
+$off-white: #F5F5F5;
+$dark-grey-text: #4A4A4A;
+
+// Example Text Colors (can be derived from main palette)
+$text-primary: $dark-grey-text;
+$text-light: $off-white;
+
+// Example Background Colors
+$bg-primary: $off-white;
+$bg-section-light: $off-white;
+$bg-section-pink: $secondary-pink;
+$bg-hero: $blue-grey-sky;
+
+
+// Other Global Variables (optional)
+$spacing-unit: 1rem; // For consistent spacing
+$border-radius: 5px;
+$transition-speed: 0.3s;

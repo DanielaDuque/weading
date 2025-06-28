@@ -1,36 +1,32 @@
-import { useState } from 'react'
-import reactLogo from '../assets/react.svg'
-import viteLogo from '/vite.svg'
-import '../App.css'
+import '../styles/main.scss'
+import Image from "../components/Image.tsx";
+import weddingCoupleImage from '../assets/wedding-couple.jpg'; // Import the image
+import './Home.scss'
+import {Typography, useMediaQuery} from '@mui/material';
+import {useTheme} from "@mui/material/styles";
 
 function Home() {
-    const [count, setCount] = useState(0)
+    const theme = useTheme();
+    const isLaptop = useMediaQuery(theme.breakpoints.up('lg'));
+    const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'lg'));
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const isMiniMobile = useMediaQuery('(max-width:359px)');
+
+    let variant: 'h1' | 'h2' | 'h3' | 'h4' = 'h1'; // Default variant
+    if( isLaptop) variant = 'h1';
+    if (isTablet) variant = 'h2';
+    if (isMobile) variant = 'h3';
+    if (isMiniMobile) variant = 'h4';
+    console.log(variant)
 
     return (
-        <>
-            test
-            <div>
-                <a href="https://vite.dev" target="_blank">
-    <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-    <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <div className="wedding-hero">
+            <Image src={weddingCoupleImage} alt="Daniela" />
+            <Typography variant={variant} className="wedding-hero__title">
+                Welcome to Our Wedding!
+            </Typography>
         </div>
-        <h1>Vite + React</h1>
-        <div className="card">
-    <button onClick={() => setCount((count) => count + 1)}>
-    count is {count}
-    </button>
-    <p>
-    Edit <code>src/App.tsx</code> and save to test HMR
-    </p>
-    </div>
-    <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-    </p>
-    </>
-)
+    )
 }
 
 export default Home

@@ -1,0 +1,89 @@
+// main.scss or App.scss
+
+@import '../variables'; // Import your variables partial
+
+                            /* General Body Styles */
+body {
+  background-color: $bg-primary;
+  color: $text-primary;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; // Good practice for consistent box model
+}
+
+
+/* Link Styles */
+a {
+  color: $primary-pink;
+  text-decoration: none;
+  transition: color $transition-speed ease;
+
+  &:hover {
+    color: darken($primary-pink, 15%); // Darken the link color on hover
+  text-decoration: underline;
+  }
+}
+
+/* Button Styles (Example) */
+.button {
+  display: inline-block;
+  padding: 0.8em 1.5em;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none; // Ensure no underline for button links
+transition: background-color $transition-speed ease, color $transition-speed ease;
+
+  &--primary {
+    background-color: $primary-pink;
+    color: $text-light;
+
+    &:hover {
+      background-color: lighten($primary-pink, 10%); // Lighten on hover
+    color: $text-light;
+    }
+  }
+
+  &--secondary {
+    background-color: $blue-grey-sky;
+    color: $text-light;
+
+    &:hover {
+      background-color: darken($blue-grey-sky, 10%);
+    }
+  }
+
+// You can add more button styles here
+}
+
+/* Layout/Section Styles (Examples) */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing-unit * 2;
+}
+
+.section {
+  padding: $spacing-unit * 4 0;
+  margin-bottom: $spacing-unit * 2;
+
+  &--hero {
+    background-color: $bg-hero;
+    color: $text-light;
+    text-align: center;
+    padding: $spacing-unit * 6 0;
+  }
+
+  &--light {
+    background-color: $bg-section-light;
+  }
+
+  &--pink {
+    background-color: $bg-section-pink;
+  }
+}
+
+// Add any other global styles you need
