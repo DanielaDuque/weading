@@ -6,6 +6,7 @@
                             /* General Body Styles */
 body {
   background-color: v.$bg-primary;
+  font-family: 'Delius Swash Caps', cursive;
   color: v.$text-primary;
   line-height: 1.6;
   margin: 0;
@@ -22,7 +23,7 @@ a {
 
   &:hover {
     color: color.adjust(v.$primary-pink, $lightness: -15%); // Darken the link color on hover
-  text-decoration: underline;
+    text-decoration: underline;
   }
 }
 

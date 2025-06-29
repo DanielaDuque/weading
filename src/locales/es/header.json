@@ -1,0 +1,17 @@
+{
+  "siteTitle": "Daniela & Stef",
+  "drawerTitle": "Daniela & Stef",
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de Nosotros",
+    "contact": "Contactanos",
+    "party": "Recepción",
+    "ceremony": "Ceremonia"
+  },
+  "language": {
+    "title": "Idioma",
+    "es": "Español",
+    "en": "Inglés",
+    "nl": "Holandés"
+  }
+}

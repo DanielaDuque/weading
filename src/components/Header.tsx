@@ -14,6 +14,19 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
 import { useTheme } from '@mui/material/styles';
+import {useTranslation} from "react-i18next";
+
+// Import Material Icons for language switcher
+import LanguageIcon from '@mui/icons-material/Language';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+
+// Import Material UI components for language switcher
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+
+import Collapse from '@mui/material/Collapse';
+import ExpandLess from '@mui/icons-material/ExpandLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
 
 // Define a type for navigation items for better type safety
 interface NavItem {
@@ -21,19 +34,29 @@ interface NavItem {
     path: string;
 }
 
-const navItems: NavItem[] = [
-    { name: 'Home', path: '/' },
-    { name: 'About Us', path: '/about' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'Party', path: '/party' },
-    { name: 'Ceremony Info', path: '/ceremony' },
-];
-
 function Header() {
+    const { t , i18n} = useTranslation('header');
     const [mobileOpen, setMobileOpen] = useState(false); // Inferring boolean type
+    const [anchorElLanguage, setAnchorElLanguage] = useState<null | HTMLElement>(null); // State for language menu anchor
+    const [languageCollapseOpen, setLanguageCollapseOpen] = useState(false);
+
+
+    const openLanguageMenu = Boolean(anchorElLanguage);
+
     const theme = useTheme(); // theme type is inferred from useTheme
     const navigate = useNavigate(); // navigate type is inferred
     const location = useLocation(); // location type is inferred
+
+    const navItems: NavItem[] = [
+        { name: t('nav.home'), path: '/' },
+        { name: t('nav.about'), path: '/about' },
+        { name: t('nav.contact'), path: '/contact' },
+        { name: t('nav.party'), path: '/party' },
+        { name: t('nav.ceremony'), path: '/ceremony' },
+    ];
+
+    const supportedLanguages = ['en', 'es', 'nl'];
+
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -44,6 +67,20 @@ function Header() {
         setMobileOpen(false);
     };
 
+    // --- Language Switcher Handlers ---
+    const handleLanguageMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setAnchorElLanguage(event.currentTarget);
+    };
+
+    const handleLanguageMenuClose = () => {
+        setAnchorElLanguage(null);
+    };
+
+    const changeLanguage = (lng: string) => {
+        i18n.changeLanguage(lng);
+        handleLanguageMenuClose(); // Close menu after selection
+    };
+
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography
@@ -51,7 +88,7 @@ function Header() {
                 sx={{ my: 2, fontFamily: theme.typography.h3.fontFamily, cursor: 'pointer' }}
                 onClick={handleLogoClick}
             >
-                Wedding Site
+                {t('drawerTitle')}
             </Typography>
             <List>
                 {navItems.map((item: NavItem) => ( // Explicitly type item
@@ -71,6 +108,34 @@ function Header() {
                         </ListItemButton>
                     </ListItem>
                 ))}
+                {/* Language Switcher in Drawer - optional, could be a separate section/button */}
+                <ListItem disablePadding>
+                    <ListItemButton onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setLanguageCollapseOpen((open) => !open)
+                    }}>
+                        <ListItemText primary={t('language.title')} sx={{ pl: 2 }} />
+                        {languageCollapseOpen ? <ExpandLess /> : <ExpandMore />}
+                    </ListItemButton>
+                </ListItem>
+                <Collapse in={languageCollapseOpen} timeout="auto" unmountOnExit>
+                    <List component="div" disablePadding>
+                        {supportedLanguages.map((lng) => (
+                            <ListItemButton
+                                key={lng}
+                                selected={i18n.language === lng}
+                                onClick={() => {
+                                    changeLanguage(lng);
+                                    setLanguageCollapseOpen((open) => !open)
+                                }}
+                                sx={{ pl: 4, textAlign: 'left' }}
+                            >
+                                <ListItemText primary={t(`language.${lng}`)} />
+                            </ListItemButton>
+                        ))}
+                    </List>
+                </Collapse>
             </List>
         </Box>
     );
@@ -103,7 +168,7 @@ function Header() {
                     }}
                     onClick={handleLogoClick}
                 >
-                    Daniela & Stef
+                    {t('siteTitle')}
                 </Typography>
                 <Box sx={{ display: { xs: 'none', md: 'block' } }}>
                     {navItems.map((item: NavItem) => ( // Explicitly type item
@@ -123,6 +188,38 @@ function Header() {
                             {item.name}
                         </Button>
                     ))}
+                    {/* Language Switcher for Desktop View (Right Corner) */}
+                    <Button
+                        aria-controls={openLanguageMenu ? 'language-menu' : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={openLanguageMenu ? 'true' : undefined}
+                        onClick={handleLanguageMenuClick}
+                        sx={{
+                            color: theme.palette.primary.contrastText,
+                            ml: 2,
+                        }}
+                    >
+                        <LanguageIcon sx={{ mr: 0.5 }} />
+                        {i18n.language.toUpperCase()} {/* Display current language code */}
+                        <ArrowDropDownIcon />
+                    </Button>
+                    <Menu
+                        id="language-menu"
+                        anchorEl={anchorElLanguage}
+                        open={openLanguageMenu}
+                        onClose={handleLanguageMenuClose}
+                        aria-labelledby="language-menu-button"
+                    >
+                        { supportedLanguages.map((lng) => (
+                                <MenuItem
+                                    key={lng}
+                                    selected={i18n.language === lng}
+                                    onClick={() => changeLanguage(lng)}>
+                                    {t(`language.${lng}`)}
+                                </MenuItem>
+
+                            ))}
+                    </Menu>
                 </Box>
             </Toolbar>
             <nav>

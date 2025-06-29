@@ -26,7 +26,9 @@ const rawColors = {
     offWhite: '#F5F5F5',
     darkGreyText: '#4A4A4A',
 };
-
+const typography = {
+    fontFamily: "'Sour Gummy', sans-serif"
+}
 let theme = createTheme({
     palette: {
         primary: {
@@ -55,15 +57,15 @@ let theme = createTheme({
         },
     },
     typography: {
-        fontFamily: ['"Open Sans"', 'sans-serif'].join(','),
+        fontFamily: typography.fontFamily,
         h1: {
-            fontFamily: ['"Playfair Display"', 'serif'].join(','),
+            fontFamily: typography.fontFamily,
         },
         h2: {
-            fontFamily: ['"Playfair Display"', 'serif'].join(','),
+            fontFamily: typography.fontFamily,
         },
         h3: {
-            fontFamily: ['"Playfair Display"', 'serif'].join(','),
+            fontFamily: typography.fontFamily,
         },
     },
     components: {

@@ -1,0 +1,17 @@
+{
+  "siteTitle": "Daniela & Stef",
+  "drawerTitle": "Daniela & Stef",
+  "nav": {
+    "home": "Home",
+    "about": "Over Ons",
+    "contact": "Contact",
+    "party": "Bruiloftsfeest",
+    "ceremony": "Ceremonie"
+  },
+    "language": {
+        "title": "Taal",
+        "es": "Spaans",
+        "en": "Engels",
+        "nl": "Nederlands"
+    }
+}

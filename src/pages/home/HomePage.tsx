@@ -3,10 +3,13 @@ import weddingCoupleImage from '../../assets/wedding-couple.jpg'; // Import the 
 import './Home.scss'
 import {Typography, useMediaQuery} from '@mui/material';
 import {useTheme} from "@mui/material/styles";
+import {useTranslation} from "react-i18next";
 
 function HomePage() {
+    const { t , i18n } = useTranslation('home');
+
+
     const theme = useTheme();
-    // const isDesktop = useMediaQuery(theme.breakpoints.up('lg'));
     const isTablet = useMediaQuery(theme.breakpoints.between('sm', 'lg'));
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
     const isMiniMobile = useMediaQuery('(max-width:375px)');
@@ -30,16 +33,17 @@ function HomePage() {
                         width : '50%',
                         textAlign: 'center',
                 }}>
-                    Welcome to Our Wedding!
+                    {t('titlePage')}
                 </Typography>
             </section>
 
             <section className=" wedding-section-info">
                 <Typography variant="h5" sx={{ mb: 2 }}>
-                    We are so excited to celebrate with you.
+                    {t('introText')}
                 </Typography>
                 <Typography variant="body1">
-                    Current date and time: {new Date().toLocaleString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })}
+                    Current date and time: {new Date().toLocaleString(i18n.language, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })} {/* <--- Use i18n.language here for date formatting */}
+
                 </Typography>
             </section>
         </div>
