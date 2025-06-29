@@ -1,4 +1,11 @@
 {
   "titlePage": "Welcome to Our Wedding!",
-  "introText": "We are so excited to celebrate with you."
+  "introText": "We are so excited to celebrate with you.",
+  "weddingDateLabel": "Our Wedding Date:",
+  "todayIsWeddingDay": "Today is the wedding day!",
+  "countdownDays": "{{days}} days",
+  "countdownHours": "{{hours}} hours",
+  "countdownMinutes": "{{minutes}} minutes",
+  "countdownSeconds": "{{seconds}} seconds",
+  "and": "and"
 }

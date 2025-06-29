@@ -1,4 +1,11 @@
 {
   "titlePage": "Welkom op Onze Bruiloft!",
-  "introText": "We zijn zo enthousiast om met jullie te vieren."
+  "introText": "We zijn zo enthousiast om met jullie te vieren.",
+  "weddingDateLabel": "Onze Trouwdatum:",
+  "todayIsWeddingDay": "Vandaag is de trouwdag!",
+  "countdownDays": "{{days}} dagen",
+  "countdownHours": "{{hours}} uur",
+  "countdownMinutes": "{{minutes}} minuten",
+  "countdownSeconds": "{{seconds}} seconden",
+  "and": "en"
 }

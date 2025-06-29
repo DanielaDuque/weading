@@ -4,6 +4,7 @@ import './Home.scss'
 import {Typography, useMediaQuery} from '@mui/material';
 import {useTheme} from "@mui/material/styles";
 import {useTranslation} from "react-i18next";
+import CountdownTimer from "../../components/CountdownTimer.tsx";
 
 function HomePage() {
     const { t , i18n } = useTranslation('home');
@@ -18,6 +19,9 @@ function HomePage() {
     if (isTablet) variant = 'h2';
     if (isMobile) variant = 'h3';
     if (isMiniMobile) variant = 'h4';
+
+    const weddingDate = new Date(2025, 9, 27, 0, 0, 0);
+
 
     return (
         <div className="wedding-hero" >
@@ -38,13 +42,21 @@ function HomePage() {
             </section>
 
             <section className=" wedding-section-info">
-                <Typography variant="h5" sx={{ mb: 2 }}>
-                    {t('introText')}
-                </Typography>
-                <Typography variant="body1">
-                    Current date and time: {new Date().toLocaleString(i18n.language, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })} {/* <--- Use i18n.language here for date formatting */}
-
-                </Typography>
+                <section className=" wedding-section-info">
+                    <Typography variant="h5" sx={{ mb: 2 }}>
+                        {t('introText')}
+                    </Typography>
+                    <Typography variant="body1" sx={{mb:1}}>
+                        {t('weddingDateLabel')} {' '}
+                        {weddingDate.toLocaleDateString(i18n.language, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
+                    </Typography>
+                    {/* Use the new CountdownTimer component */}
+                    <CountdownTimer
+                        date={weddingDate}
+                        nowMessage={t('todayIsWeddingDay')}
+                        nameSpace={'home'}
+                    /> {/* <--- New component here */}
+                </section>
             </section>
         </div>
     )

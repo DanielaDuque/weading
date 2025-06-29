@@ -28,6 +28,10 @@ import contactEn from './locales/en/contact.json';
 import contactEs from './locales/es/contact.json';
 import contactNl from './locales/nl/contact.json';
 
+// Import Footer translations
+import footerEn from './locales/en/footer.json';
+import footerEs from './locales/es/footer.json';
+import footerNl from './locales/nl/footer.json';
 
 const resources = {
     en: {
@@ -36,6 +40,7 @@ const resources = {
         party: partyEn,
         comingSoon: comingSoonEn,
         contact: contactEn,
+        footer: footerEn,
     },
     es: {
         header: headerEs,
@@ -43,6 +48,7 @@ const resources = {
         party: partyEs,
         comingSoon: comingSoonEs,
         contact: contactEs,
+        footer: footerEs,
     },
     nl: {
         header: headerNl,
@@ -50,6 +56,7 @@ const resources = {
         party: partyNl,
         comingSoon: comingSoonNl,
         contact: contactNl,
+        footer: footerNl,
     },
 };
 
@@ -59,7 +66,7 @@ i18n
     .init({
         resources,
         fallbackLng: 'nl', // Idioma de respaldo
-        ns: ['header', 'home', 'party', 'comingSoon', 'contact'], // Declara todos tus namespaces
+        ns: ['header', 'home', 'party', 'comingSoon', 'contact', 'footer'], // Declara todos tus namespaces
         defaultNS: 'header', // Namespace por defecto si no se especifica uno
         interpolation: {
             escapeValue: false, // React ya escapa los valores
@@ -87,6 +94,7 @@ type TranslationResources = {
     party: typeof partyEn;
     comingSoon: typeof comingSoonEn;
     contact: typeof contactEn;
+    footer: typeof footerEn;
 };
 
 declare module 'react-i18next' {
