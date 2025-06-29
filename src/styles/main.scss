@@ -1,4 +1,5 @@
 // main.scss or App.scss
+@use 'sass:color';
 @use '../variables' as v; // Import your variables partial
 @import 'leaflet/dist/leaflet.css';
 
@@ -20,7 +21,7 @@ a {
   transition: color v.$transition-speed ease;
 
   &:hover {
-    color: darken(v.$primary-pink, 15%); // Darken the link color on hover
+    color: color.adjust(v.$primary-pink, $lightness: -15%); // Darken the link color on hover
   text-decoration: underline;
   }
 }
@@ -42,7 +43,7 @@ transition: background-color v.$transition-speed ease, color v.$transition-speed
     color: v.$text-light;
 
     &:hover {
-      background-color: lighten(v.$primary-pink, 10%); // Lighten on hover
+      background-color: color.adjust(v.$primary-pink, $lightness: 10%); // Lighten on hover
     color: v.$text-light;
     }
   }
@@ -52,7 +53,7 @@ transition: background-color v.$transition-speed ease, color v.$transition-speed
     color: v.$text-light;
 
     &:hover {
-      background-color: darken(v.$blue-grey-sky, 10%);
+      background-color: color.adjust(v.$blue-grey-sky, $lightness: -10%);;
     }
   }
 

@@ -20,19 +20,19 @@ Icon.Default.mergeOptions({
 });
 
 // Create custom icons if you want to differentiate
-const ceremonyIcon = new Icon({
-    iconUrl: '/icons/wedding-bell-icon.png', // Path to your custom icon in public folder
-    iconSize: [38, 38], // size of the icon
-    iconAnchor: [19, 38], // point of the icon which will correspond to marker's location
-    popupAnchor: [0, -38], // point from which the popup should open relative to the iconAnchor
-});
-
-const receptionIcon = new Icon({
-    iconUrl: '/icons/champagne-toast-icon.png', // Path to your custom icon in public folder
-    iconSize: [38, 38],
-    iconAnchor: [19, 38],
-    popupAnchor: [0, -38],
-});
+// const ceremonyIcon = new Icon({
+//     iconUrl: '/icons/wedding-bell-icon.png', // Path to your custom icon in public folder
+//     iconSize: [38, 38], // size of the icon
+//     iconAnchor: [19, 38], // point of the icon which will correspond to marker's location
+//     popupAnchor: [0, -38], // point from which the popup should open relative to the iconAnchor
+// });
+//
+// const receptionIcon = new Icon({
+//     iconUrl: '/icons/champagne-toast-icon.png', // Path to your custom icon in public folder
+//     iconSize: [38, 38],
+//     iconAnchor: [19, 38],
+//     popupAnchor: [0, -38],
+// });
 
 
 // Fallback for custom icons if you don't have images yet
