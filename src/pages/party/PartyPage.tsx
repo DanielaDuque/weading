@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
-import {Typography, useMediaQuery} from "@mui/material";
+import {Grid, Typography, useMediaQuery} from "@mui/material";
 import LeafletMapComponent from "../../components/LeafletMapComponent.tsx";
 import {useTranslation} from "react-i18next";
 import './PartyPage.scss'
@@ -29,15 +29,13 @@ function PartyPage() {
 
             </section>
             <section className="section section--hero">
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: { xs: 'column', md: 'row' },
-                        justifyContent: 'space-between',
-                        gap: isTabletOrMobile? 1 : 2,
-                    }}
+                <Grid
+                    container
+                    direction={{xs: 'column', md: 'row'}}
+                    spacing={{ xs: 1, md: 2 }}
+                    justifyContent={'space-between'}
                 >
-                    <Box className="party-details">
+                    <Grid size={{sm: 12, md: 6}} className="party-details">
                         <Typography variant="h3" > {t('receptionSectionTitle')}</Typography>
                         <Typography variant="body1">
                             <strong>MOLENHOF - GILSEINDE 113, RAVELS </strong><br/>
@@ -48,8 +46,8 @@ function PartyPage() {
                         <Typography variant="body1" >
                             {t('celebrationMessage')}
                         </Typography>
-                    </Box>
-                    <Box sx={{ flex: 1 }}>
+                    </Grid>
+                    <Grid size={{sm: 12, md: 6}} >
                         <LeafletMapComponent
                             markers={[
                                 {
@@ -63,8 +61,8 @@ function PartyPage() {
                             width={isTabletOrMobile ? '100%' : '80%'}
                         />
 
-                    </Box>
-                </Box>
+                    </Grid>
+                </Grid>
 
             </section>
         </div>

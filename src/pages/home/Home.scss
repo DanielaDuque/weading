@@ -1,7 +1,7 @@
 @use "../../variables" as v;
 
 .wedding-image{
-  width: 100%; // Image fills its container
+  width: 100%; // ImageComponent fills its container
   height: auto; // Maintain aspect ratio
   display: block; // Removes extra space below image
 }

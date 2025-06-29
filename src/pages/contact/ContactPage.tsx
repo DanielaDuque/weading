@@ -1,8 +1,55 @@
-import ComingSoon from "../../components/ComingSoon.tsx";
 
-function ContactPage () {
+import {Typography, Grid} from '@mui/material';
+
+import { useTranslation } from 'react-i18next';
+import ContactCard from "../../components/ContactCard.tsx";
+import stefImage from '../../assets/stef.jpg'; // Import the image
+import danielaImage from '../../assets/daniela.jpg'; // Import the image
+
+
+function ContactPage() {
+    const { t } = useTranslation('contact'); // Use the 'contact' namespace
+
     return (
-        <ComingSoon/>
+        <section className="section">
+            <Typography variant="h2"  sx={{
+                mb: 6,
+                textAlign: 'center',
+            }}>
+                {t('contactTitle')}
+            </Typography>
+            <Grid container
+                  spacing={2}
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="center"
+
+            >
+                <Grid size={{sm: 12, md: 5}}>
+                    <ContactCard
+                        photo={stefImage}
+                        name='Stef Aerts'
+                        email='stef.aerts123@gmail.com'
+                        phone='+32 494 68 75 66'
+                        whatsapp='+32 494 68 75 66'
+                        role={t('stefRole')}
+                    ></ContactCard>
+                </Grid>
+
+                <Grid size={{sm: 12, md: 5}}>
+                    <ContactCard
+                        photo={danielaImage}
+                        name='Daniela Duque'
+                        email='daniela_0708@outlook.com'
+                        phone='+32 466 43 07 37'
+                        whatsapp='+33 773 80 86 39'
+                        role={t('danielaRole')}
+                    ></ContactCard>
+                </Grid>
+            </Grid>
+        </section>
+
     );
 }
+
 export default ContactPage;

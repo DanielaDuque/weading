@@ -23,24 +23,33 @@ import comingSoonEn from './locales/en/comingSoon.json';
 import comingSoonEs from './locales/es/comingSoon.json';
 import comingSoonNl from './locales/nl/comingSoon.json';
 
+//Import Contact translations
+import contactEn from './locales/en/contact.json';
+import contactEs from './locales/es/contact.json';
+import contactNl from './locales/nl/contact.json';
+
+
 const resources = {
     en: {
         header: headerEn,
         home: homeEn,
         party: partyEn,
         comingSoon: comingSoonEn,
+        contact: contactEn,
     },
     es: {
         header: headerEs,
         home: homeEs,
         party: partyEs,
         comingSoon: comingSoonEs,
+        contact: contactEs,
     },
     nl: {
         header: headerNl,
         home: homeNl,
         party: partyNl,
         comingSoon: comingSoonNl,
+        contact: contactNl,
     },
 };
 
@@ -50,7 +59,7 @@ i18n
     .init({
         resources,
         fallbackLng: 'nl', // Idioma de respaldo
-        ns: ['header', 'home', 'party', 'comingSoon'], // Declara todos tus namespaces
+        ns: ['header', 'home', 'party', 'comingSoon', 'contact'], // Declara todos tus namespaces
         defaultNS: 'header', // Namespace por defecto si no se especifica uno
         interpolation: {
             escapeValue: false, // React ya escapa los valores
@@ -76,6 +85,8 @@ type TranslationResources = {
     header: typeof headerEn;
     home: typeof homeEn;
     party: typeof partyEn;
+    comingSoon: typeof comingSoonEn;
+    contact: typeof contactEn;
 };
 
 declare module 'react-i18next' {
