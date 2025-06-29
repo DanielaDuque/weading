@@ -1,0 +1,75 @@
+@use "../../variables" as v;
+
+.wedding-image{
+  width: 100%; // Image fills its container
+  height: auto; // Maintain aspect ratio
+  display: block; // Removes extra space below image
+}
+
+.wedding-hero {
+
+  &__image {
+    height: 60vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: flex-start; // To place title at the bottom
+    justify-content: center
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+
+  }
+
+}
+
+.wedding-section-info{
+    background-color: v.$bg-section-light;
+    padding: 2rem;
+    text-align: center;
+
+    h2 {
+        color: v.$text-primary;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: v.$dark-grey-text;
+        line-height: 1.6;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px){
+  .wedding-hero{
+    &__image {
+      background-size: cover;
+      height: 40vh;
+      background-position: top center;
+    }
+    &__title {
+      top: 15%; // Adjust title position for smaller screens
+      width: 80%; // Make title wider on smaller screens
+    }
+  }
+}
+
+@media  (max-width: 600px) {
+  .wedding-hero{
+    &__image {
+      background-size: cover;
+      height: 20vh;
+      background-position: top center;
+    }
+    &__title {
+      top: 20%; // Adjust title position for smaller screens
+      width: 90%; // Make title wider on smaller screens
+    }
+  }
+}

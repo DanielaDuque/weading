@@ -25,6 +25,7 @@ const navItems: NavItem[] = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Party', path: '/party' },
     { name: 'Ceremony Info', path: '/ceremony' },
 ];
 
@@ -75,7 +76,12 @@ function Header() {
     );
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: theme.palette.primary.main }}>
+        <AppBar position="static"
+                sx={{
+                    backgroundColor: theme.palette.primary.main,
+                    zIndex: 10,
+                    boxShadow: theme.shadows[4],
+                }}>
             <Toolbar>
                 <IconButton
                     color="inherit"

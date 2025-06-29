@@ -1,11 +1,11 @@
 // main.scss or App.scss
-
-@import '../variables'; // Import your variables partial
+@use '../variables' as v; // Import your variables partial
+@import 'leaflet/dist/leaflet.css';
 
                             /* General Body Styles */
 body {
-  background-color: $bg-primary;
-  color: $text-primary;
+  background-color: v.$bg-primary;
+  color: v.$text-primary;
   line-height: 1.6;
   margin: 0;
   padding: 0;
@@ -15,12 +15,12 @@ body {
 
 /* Link Styles */
 a {
-  color: $primary-pink;
+  color: v.$primary-pink;
   text-decoration: none;
-  transition: color $transition-speed ease;
+  transition: color v.$transition-speed ease;
 
   &:hover {
-    color: darken($primary-pink, 15%); // Darken the link color on hover
+    color: darken(v.$primary-pink, 15%); // Darken the link color on hover
   text-decoration: underline;
   }
 }
@@ -30,29 +30,29 @@ a {
   display: inline-block;
   padding: 0.8em 1.5em;
   border: none;
-  border-radius: $border-radius;
+  border-radius: v.$border-radius;
   cursor: pointer;
   font-size: 1rem;
   text-align: center;
   text-decoration: none; // Ensure no underline for button links
-transition: background-color $transition-speed ease, color $transition-speed ease;
+transition: background-color v.$transition-speed ease, color v.$transition-speed ease;
 
   &--primary {
-    background-color: $primary-pink;
-    color: $text-light;
+    background-color: v.$primary-pink;
+    color: v.$text-light;
 
     &:hover {
-      background-color: lighten($primary-pink, 10%); // Lighten on hover
-    color: $text-light;
+      background-color: lighten(v.$primary-pink, 10%); // Lighten on hover
+    color: v.$text-light;
     }
   }
 
   &--secondary {
-    background-color: $blue-grey-sky;
-    color: $text-light;
+    background-color: v.$blue-grey-sky;
+    color: v.$text-light;
 
     &:hover {
-      background-color: darken($blue-grey-sky, 10%);
+      background-color: darken(v.$blue-grey-sky, 10%);
     }
   }
 
@@ -63,26 +63,26 @@ transition: background-color $transition-speed ease, color $transition-speed eas
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: $spacing-unit * 2;
+  padding: v.$spacing-unit * 2;
 }
 
 .section {
-  padding: $spacing-unit * 4 0;
-  margin-bottom: $spacing-unit * 2;
+  padding: v.$spacing-unit * 2 0;
+  margin-bottom: v.$spacing-unit * 2;
 
   &--hero {
-    background-color: $bg-hero;
-    color: $text-light;
+    background-color: v.$bg-hero;
+    color: v.$text-light;
     text-align: center;
-    padding: $spacing-unit * 6 0;
+    padding: v.$spacing-unit * 6 0;
   }
 
   &--light {
-    background-color: $bg-section-light;
+    background-color: v.$bg-section-light;
   }
 
   &--pink {
-    background-color: $bg-section-pink;
+    background-color: v.$bg-section-pink;
   }
 }
 
