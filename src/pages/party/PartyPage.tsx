@@ -1,10 +1,15 @@
 import Box from "@mui/material/Box";
 import {Typography} from "@mui/material";
 import LeafletMapComponent from "../../components/LeafletMapComponent.tsx";
+import {useTranslation} from "react-i18next";
 
 
 
 function PartyPage() {
+
+    const { t } = useTranslation('party');
+
+
     return(
         <>
             <section className="section">
@@ -18,8 +23,8 @@ function PartyPage() {
                                     textAlign: 'center',
                                     mb: 4,
                                 }}
-                    >Reception Details</Typography>
-                    <Typography variant="subtitle1" sx={{ mt: 3 }}> More details soon</Typography>
+                    >{t('receptionDetailsTitle')}</Typography>
+                    <Typography variant="subtitle1" sx={{ mt: 3 }}>{t('moreDetailsSoon')} </Typography>
                 </Box>
 
             </section>
@@ -41,7 +46,7 @@ function PartyPage() {
                         alignItems: 'flex-end', // Align left
                         justifyContent: 'center', // Vertically center
                     }}>
-                        <Typography variant="h3" > Reception</Typography>
+                        <Typography variant="h3" > {t('receptionSectionTitle')}</Typography>
                         <Typography variant="body1">
                             <strong>MOLENHOF - GILSEINDE 113, RAVELS </strong><br/>
                         </Typography>
@@ -49,7 +54,7 @@ function PartyPage() {
                             19.00 H
                         </Typography>
                         <Typography variant="body1" >
-                            We look forward to celebrating with you in Ravels, Flanders, Belgium!
+                            {t('celebrationMessage')}
                         </Typography>
                     </Box>
                     <Box sx={{ flex: 1 }}>
@@ -58,7 +63,7 @@ function PartyPage() {
                             markers={[
                                 {
                                     position: [51.3726241, 5.0101037],
-                                    title: 'Reception Location',
+                                    title: t('mapMarkerTitle'),
                                     address: 'MOLENHOF - GILSEINDE 113, RAVELS',
                                     time: '19.00 H'
                                 }
