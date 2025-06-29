@@ -1,51 +1,43 @@
 import Box from "@mui/material/Box";
-import {Typography} from "@mui/material";
+import {Typography, useMediaQuery} from "@mui/material";
 import LeafletMapComponent from "../../components/LeafletMapComponent.tsx";
 import {useTranslation} from "react-i18next";
-
+import './PartyPage.scss'
+import {useTheme} from "@mui/material/styles";
+import ComingSoon from "../../components/ComingSoon.tsx";
 
 
 function PartyPage() {
 
     const { t } = useTranslation('party');
+    const theme = useTheme();
+    const isTabletOrMobile = useMediaQuery(theme.breakpoints.down( 'md'));
 
 
     return(
-        <>
+        <div className="PartyPage">
             <section className="section">
-                <Box
-                    sx={{
-                        px : 2,
-                    }}
-                >
+                <Box>
                     <Typography variant="h2" gutterBottom
                                 sx={{
                                     textAlign: 'center',
                                     mb: 4,
                                 }}
                     >{t('receptionDetailsTitle')}</Typography>
-                    <Typography variant="subtitle1" sx={{ mt: 3 }}>{t('moreDetailsSoon')} </Typography>
+                    <ComingSoon height='100%'/>
                 </Box>
 
             </section>
-            <section className="section">
+            <section className="section section--hero">
                 <Box
                     sx={{
                         display: 'flex',
                         flexDirection: { xs: 'column', md: 'row' },
                         justifyContent: 'space-between',
-                        gap: 4,
-                        mb: 4,
-                        px : 2,
+                        gap: isTabletOrMobile? 1 : 2,
                     }}
                 >
-                    <Box sx={{
-                        flex: 1,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'flex-end', // Align left
-                        justifyContent: 'center', // Vertically center
-                    }}>
+                    <Box className="party-details">
                         <Typography variant="h3" > {t('receptionSectionTitle')}</Typography>
                         <Typography variant="body1">
                             <strong>MOLENHOF - GILSEINDE 113, RAVELS </strong><br/>
@@ -58,7 +50,6 @@ function PartyPage() {
                         </Typography>
                     </Box>
                     <Box sx={{ flex: 1 }}>
-
                         <LeafletMapComponent
                             markers={[
                                 {
@@ -68,13 +59,15 @@ function PartyPage() {
                                     time: '19.00 H'
                                 }
                             ]}
+                            height={isTabletOrMobile? '50vh' : '30vh'}
+                            width={isTabletOrMobile ? '100%' : '80%'}
                         />
 
                     </Box>
                 </Box>
 
             </section>
-        </>
+        </div>
 
     );
 }

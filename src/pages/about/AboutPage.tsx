@@ -1,14 +1,9 @@
 
-import Box from '@mui/material/Box';
+import ComingSoon from "../../components/ComingSoon.tsx";
 
 function AboutPage () {
     return (
-        <Box sx={{ p: 4 }}>
-            <h1>About Us</h1>
-            <p>
-                Welcome to our About Us page. More content coming soon.
-            </p>
-        </Box>
+        <ComingSoon/>
     );
 }
 

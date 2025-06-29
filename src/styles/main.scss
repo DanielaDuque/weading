@@ -1,12 +1,13 @@
 // main.scss or App.scss
 @use 'sass:color';
-@use '../variables' as v; // Import your variables partial
+@use '../variables' as v;
+// Import your variables partial
 @import 'leaflet/dist/leaflet.css';
 
-                            /* General Body Styles */
+/* General Body Styles */
 body {
   background-color: v.$bg-primary;
-  font-family: 'Delius Swash Caps', cursive;
+  font-family: 'Sour Gummy', sans-serif;
   color: v.$text-primary;
   line-height: 1.6;
   margin: 0;
@@ -37,7 +38,7 @@ a {
   font-size: 1rem;
   text-align: center;
   text-decoration: none; // Ensure no underline for button links
-transition: background-color v.$transition-speed ease, color v.$transition-speed ease;
+  transition: background-color v.$transition-speed ease, color v.$transition-speed ease;
 
   &--primary {
     background-color: v.$primary-pink;
@@ -45,7 +46,7 @@ transition: background-color v.$transition-speed ease, color v.$transition-speed
 
     &:hover {
       background-color: color.adjust(v.$primary-pink, $lightness: 10%); // Lighten on hover
-    color: v.$text-light;
+      color: v.$text-light;
     }
   }
 
@@ -58,25 +59,23 @@ transition: background-color v.$transition-speed ease, color v.$transition-speed
     }
   }
 
-// You can add more button styles here
+  // You can add more button styles here
 }
 
 /* Layout/Section Styles (Examples) */
 .container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: v.$spacing-unit * 2;
 }
 
 .section {
-  padding: v.$spacing-unit * 2 0;
+  padding: v.$spacing-unit * 2 v.$spacing-unit * 3;
   margin-bottom: v.$spacing-unit * 2;
 
   &--hero {
     background-color: v.$bg-hero;
     color: v.$text-light;
-    text-align: center;
-    padding: v.$spacing-unit * 6 0;
   }
 
   &--light {
@@ -85,6 +84,20 @@ transition: background-color v.$transition-speed ease, color v.$transition-speed
 
   &--pink {
     background-color: v.$bg-section-pink;
+  }
+}
+
+@media  (max-width: 600px) {
+  .section {
+    padding: v.$spacing-unit * 1.5 v.$spacing-unit * 2;
+  }
+
+  .container {
+    padding: v.$spacing-unit;
+  }
+
+  .button {
+    padding: 0.6em 1.2em; // Smaller button padding
   }
 }
 

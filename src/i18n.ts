@@ -1,5 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+
 
 // Import Header translations
 import headerEn from './locales/en/header.json';
@@ -16,31 +18,39 @@ import partyEn from './locales/en/party.json';
 import partyEs from './locales/es/party.json';
 import partyNl from './locales/nl/party.json';
 
+//Import ComingSoon translations
+import comingSoonEn from './locales/en/comingSoon.json';
+import comingSoonEs from './locales/es/comingSoon.json';
+import comingSoonNl from './locales/nl/comingSoon.json';
+
 const resources = {
     en: {
         header: headerEn,
         home: homeEn,
         party: partyEn,
+        comingSoon: comingSoonEn,
     },
     es: {
         header: headerEs,
         home: homeEs,
         party: partyEs,
+        comingSoon: comingSoonEs,
     },
     nl: {
         header: headerNl,
         home: homeNl,
         party: partyNl,
+        comingSoon: comingSoonNl,
     },
 };
 
 i18n
+    .use(LanguageDetector)
     .use(initReactI18next)
     .init({
         resources,
-        lng: 'nl', // Idioma predeterminado
-        fallbackLng: 'es', // Idioma de respaldo
-        ns: ['header', 'home', 'party'], // Declara todos tus namespaces
+        fallbackLng: 'nl', // Idioma de respaldo
+        ns: ['header', 'home', 'party', 'comingSoon'], // Declara todos tus namespaces
         defaultNS: 'header', // Namespace por defecto si no se especifica uno
         interpolation: {
             escapeValue: false, // React ya escapa los valores
@@ -48,6 +58,12 @@ i18n
         react: {
             useSuspense: false, // Puedes usar 'true' si configuras Suspense
         },
+        detection: {
+            order: ['localStorage', 'navigator'], // Order of detection: try localStorage first, then browser language
+            caches: ['localStorage'], // Where to cache the last selected language
+            lookupLocalStorage: 'i18nextLng', // Key to use in localStorage
+            // cookieDomain: 'https://danieladuque.github.io',
+        }
     });
 
 export default i18n;

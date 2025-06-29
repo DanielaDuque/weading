@@ -19,22 +19,6 @@ Icon.Default.mergeOptions({
     shadowUrl: 'leaflet/dist/images/marker-shadow.png',
 });
 
-// Create custom icons if you want to differentiate
-// const ceremonyIcon = new Icon({
-//     iconUrl: '/icons/wedding-bell-icon.png', // Path to your custom icon in public folder
-//     iconSize: [38, 38], // size of the icon
-//     iconAnchor: [19, 38], // point of the icon which will correspond to marker's location
-//     popupAnchor: [0, -38], // point from which the popup should open relative to the iconAnchor
-// });
-//
-// const receptionIcon = new Icon({
-//     iconUrl: '/icons/champagne-toast-icon.png', // Path to your custom icon in public folder
-//     iconSize: [38, 38],
-//     iconAnchor: [19, 38],
-//     popupAnchor: [0, -38],
-// });
-
-
 // Fallback for custom icons if you don't have images yet
 const defaultIcon = new Icon({
     iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
@@ -74,7 +58,8 @@ interface MarkerInfo {
 
 interface LeafletMapComponentProps {
     markers: MarkerInfo[]
-    // You could pass props if you want to make it reusable for different locations
+    height?: string; // Optional height prop for the map container
+    width?: string;
 }
 
 
@@ -86,21 +71,13 @@ const LeafletMapComponent: React.FC<LeafletMapComponentProps> = (
     // Coordinates for Ravels, Belgium (approximate center)
     const initialCenter: LatLngExpression = [51.326, 4.965]; // Lat, Lng
 
-    // // Coordinates for Ceremony Location (example, update with actual)
-    // const ceremonyPos: LatLngExpression = [51.325, 4.970]; // JACHTWEG 11, RAVELS
-    // // Coordinates for Reception Location (example, update with actual)
-    // const receptionPos: LatLngExpression = [51.330, 4.960]; // MOLENHOF - GILSEINDE 113, RAVELS
-
     const allLocations = props.markers.map(marker => marker.position);
 
 
     return (
         <Box sx={{
-            width: '100%',
-            maxWidth: '800px', // Max width for the map container
-            mx: 'auto', // Center the map
-            mt: 4,
-            mb: 4,
+            width: props.width ?? '100%',
+            maxWidth: '800px',
             borderRadius: '8px',
             overflow: 'hidden', // Ensure corners are rounded
             boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
@@ -109,7 +86,10 @@ const LeafletMapComponent: React.FC<LeafletMapComponentProps> = (
                 center={initialCenter}
                 zoom={13} // Initial zoom, will be overridden by FitBoundsComponent
                 scrollWheelZoom={true} // Enable scroll zoom
-                style={{ height: '500px', width: '100%' }} // Map container dimensions
+                style={{
+                    height: props.height ?? '20vh',
+                    width:  '100%',
+                }} // Map container dimensions
             >
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -131,7 +111,12 @@ const LeafletMapComponent: React.FC<LeafletMapComponentProps> = (
                     ))
                 }
             </MapContainer>
-            <Typography variant="caption" sx={{ mt: 2, display: 'block', textAlign: 'center', color: theme.palette.text.secondary }}>
+            <Typography variant="caption" sx={{
+                display: 'block',
+                textAlign: 'center',
+                color: theme.palette.text.primary,
+                background: theme.palette.background.paper
+            }}>
                 Map data &copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap contributors</a>.
             </Typography>
         </Box>

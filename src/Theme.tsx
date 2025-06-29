@@ -57,16 +57,8 @@ let theme = createTheme({
         },
     },
     typography: {
+        htmlFontSize: 12, // This sets the base font size
         fontFamily: typography.fontFamily,
-        h1: {
-            fontFamily: typography.fontFamily,
-        },
-        h2: {
-            fontFamily: typography.fontFamily,
-        },
-        h3: {
-            fontFamily: typography.fontFamily,
-        },
     },
     components: {
         MuiLink: {
