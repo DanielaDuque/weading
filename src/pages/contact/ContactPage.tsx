@@ -3,8 +3,8 @@ import {Typography, Grid} from '@mui/material';
 
 import { useTranslation } from 'react-i18next';
 import ContactCard from "../../components/ContactCard.tsx";
-import stefImage from '../../assets/stef.jpg'; // Import the image
-import danielaImage from '../../assets/daniela.jpg'; // Import the image
+import stefImage from '../../assets/stef.webp'; // Import the image
+import danielaImage from '../../assets/daniela.webp'; // Import the image
 
 
 function ContactPage() {

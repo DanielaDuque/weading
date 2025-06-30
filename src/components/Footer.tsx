@@ -1,5 +1,5 @@
 
-import { Box, Typography, Container, Link } from '@mui/material';
+import { Box, Typography, Container } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material/styles';
 
@@ -27,16 +27,6 @@ function Footer() {
                 <Typography variant="body2" align="center">
                     {t('allRightsReserved')}
                 </Typography>
-                {/* Optional: Add social media links or other useful links here */}
-                <Box sx={{ mt: 2, display: 'flex', justifyContent: 'center', gap: 2 }}>
-                    {/* Example Link: You might remove this or add your own */}
-                    <Link href="#" color="inherit" underline="hover">
-                        {t('privacyPolicy')}
-                    </Link>
-                    <Link href="#" color="inherit" underline="hover">
-                        {t('termsOfService')}
-                    </Link>
-                </Box>
             </Container>
         </Box>
     );

@@ -24,7 +24,7 @@ function PartyPage() {
                                     mb: 4,
                                 }}
                     >{t('receptionDetailsTitle')}</Typography>
-                    <ComingSoon height='100%'/>
+                    <ComingSoon height='30vh'/>
                 </Box>
 
             </section>

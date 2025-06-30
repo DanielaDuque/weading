@@ -1,5 +1,5 @@
 import '../../styles/main.scss'
-import weddingCoupleImage from '../../assets/wedding-couple.jpg'; // Import the image
+import weddingCoupleImage from '../../assets/wedding-couple.webp'; // Import the image
 import './Home.scss'
 import {Typography, useMediaQuery} from '@mui/material';
 import {useTheme} from "@mui/material/styles";
@@ -20,7 +20,7 @@ function HomePage() {
     if (isMobile) variant = 'h3';
     if (isMiniMobile) variant = 'h4';
 
-    const weddingDate = new Date(2025, 9, 27, 0, 0, 0);
+    const weddingDate = new Date(2025, 8, 27, 0, 0, 0);
 
 
     return (
