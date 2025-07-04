@@ -1,0 +1,37 @@
+{
+  "firstSpark" : {
+    "date": "Octubre 2021",
+    "title": "Donde Todo Comenzó",
+    "description": "En el otoño de 2021, Stef y Daniela estaban estudiando en Rennes. Se miraron a los ojos por primera vez el 18 de octubre de 2021, en el pub irlandés O'Connels."
+  },
+  "firstPicture" : {
+    "date": "Diciembre 2021",
+    "title": "La Primera Foto",
+    "description": "La primera foto de Stef y Daniela fue el 28 de diciembre de 2021. Visitaron el mercado de Navidad en Rennes, y para aquellos que no lo recuerdan, el covid todavía estaba presente."
+  },
+  "firstBelgium": {
+    "date": "Enero 2022",
+    "title": "El primer viaja a Bélgica",
+    "description": "Aunque Stef tuvo que regresar a Bélgica a finales de diciembre, la historia no terminó. El 15 de enero de 2022, Daniela visitó a Stef por primera vez en Ravels; esta fue la primera de muchas visitas mutuas."
+  },
+  "MovingTogether" : {
+    "title": "Mudándonos Juntos",
+    "date": "Verano 2023",
+    "description": "En el verano de 2023, tanto Stef como Daniela obtuvieron su título y pudieron empezar a trabajar. Stef y Daniela encontraron un apartamento en Lille (FR) que alquilaron durante más de un año."
+  },
+  "toColombia" : {
+    "title": "Visitando Colombia",
+    "date": "Mayo 2024",
+    "description": "En mayo de 2024, Stef y Daniela viajaron a Colombia. Visitaron la selva amazónica, la ciudad natal de Daniela, Ibagué, y muchos otros lugares impresionantes."
+  },
+  "engagement": {
+    "title": "Nuestro Compromiso",
+    "date": "29 de Junio de 2024",
+    "description": "El 29 de junio de 2024, después de mucha preparación, Stef llevó a Daniela a Cap Blanc Nez. En el mar, justo frente a los acantilados, se arrodilló y le pidió a Daniela que se casara con él. Afortunadamente, ella dijo que sí."
+  },
+  "bigDate": {
+    "title": "El Gran Día",
+    "date": "27 de Septiembre de 2025",
+    "description": "El 27 de septiembre de 2025, Stef y Daniela se casarán. Ese día, confirmarán su amor eterno el uno por el otro. Stef y Daniela están encantados de celebrar ese día con todos ustedes."
+  }
+}

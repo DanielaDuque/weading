@@ -1,0 +1,37 @@
+{
+  "firstSpark" : {
+    "date": "Oktober 2021",
+    "title": "De Eerste Vonk",
+    "description": "In de herfst van 2021 studeerden Stef en Daniela beiden in Rennes. Stef en Daniela keken elkaar voor het eerst in de ogen op 18 oktober 2021, in de Ierse pub O'Connels."
+  },
+  "firstPicture" : {
+    "date": "December 2021",
+    "title": "De Eerste Foto",
+    "description": "De eerste foto van Stef en Daniela was op 28 december 2021. Stef en Daniela bezochten de kerstmarkt in Rennes, voor degenen die het zich niet meer herinneren, corona was nog steeds aanwezig."
+  },
+  "firstBelgium": {
+    "date": "Januari 2022",
+    "title": "De Eerste Keer in België",
+    "description": "Hoewel Stef eind december terug moest naar België, eindigde het verhaal niet. Op 15 januari 2022 bezocht Daniela Stef voor het eerst in Ravels, dit was het eerste van vele bezoeken aan elkaar."
+  },
+  "MovingTogether" : {
+    "title": "Samenwonen",
+    "date": "Zomer 2023",
+    "description": "In de zomer van 2023 behaalden zowel Stef als Daniela hun diploma en konden ze beginnen met werken. Stef en Daniela vonden een appartement in Lille (FR) dat ze ruim een jaar huurden."
+  },
+  "toColombia" : {
+    "title": "Naar Colombia",
+    "date": "Mei 2024",
+    "description": "In mei 2024 reisden Stef en Daniela naar Colombia. Ze bezochten het Amazone regenwoud, Daniela's thuisstad Ibague en vele andere adembenemende locaties."
+  },
+  "engagement": {
+    "title": "Onze Verloving",
+    "date": "29 Juni 2024",
+    "description": "Op 29 juni 2024, na veel voorbereiding, bracht Stef Daniela naar Cap Blanc Nez. In de zee, vlak voor de kliffen, ging hij op zijn knieën en vroeg Daniela ten huwelijk. Gelukkig zei ze ja."
+  },
+  "bigDate": {
+    "title": "De Grote Dag",
+    "date": "27 September 2025",
+    "description": "Op 27 september 2025 zullen Stef en Daniela trouwen. Op die dag zullen ze hun eeuwige liefde voor elkaar bevestigen. Stef en Daniela zijn dolenthousiast om die dag met jullie allemaal te vieren."
+  }
+}

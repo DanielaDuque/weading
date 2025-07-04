@@ -1,12 +1,13 @@
 import {Grid, Link, Paper, Typography} from "@mui/material";
-import ImageComponent from "./ImageComponent.tsx";
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import Box from "@mui/material/Box";
 
 interface ContactCardProps {
-    photo: any;
+    photo: string;
     name: string;
+    alt: string; // This prop is not used in the component, but you can keep it if needed for future use
     email: string;
     phone: string;
     whatsapp: string;
@@ -31,13 +32,18 @@ function ContactCard(props: Readonly<ContactCardProps>) {
                 <Grid sx={{
                     p: 2
                 }}>
-                    <ImageComponent
-                        borderRadius={'50%'}
+                    <Box
+                        component="img"
                         src={props.photo}
-                        alt="Card's photo"
-                        height="auto"
-                        width="100%">
-                    </ImageComponent>
+                        alt={props.alt}
+                        sx={{
+                            maxWidth: '100%',
+                            height: 'auto',
+                            borderRadius: '20px',
+                            marginTop: 1,
+                            boxShadow: 3,
+                        }}
+                    />
                 </Grid>
                 <Grid container
                       spacing={2}

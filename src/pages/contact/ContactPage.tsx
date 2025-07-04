@@ -29,6 +29,7 @@ function ContactPage() {
                     <ContactCard
                         photo={stefImage}
                         name='Stef Aerts'
+                        alt='Stef Aerts'
                         email='stef.aerts123@gmail.com'
                         phone='+32 494 68 75 66'
                         whatsapp='+32 494 68 75 66'
@@ -40,8 +41,9 @@ function ContactPage() {
                     <ContactCard
                         photo={danielaImage}
                         name='Daniela Duque'
+                        alt='Daniela Duque'
                         email='daniela_0708@outlook.com'
-                        phone='+32 466 43 07 37'
+                        phone='+32 466 34 07 37'
                         whatsapp='+33 773 80 86 39'
                         role={t('danielaRole')}
                     ></ContactCard>

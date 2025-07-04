@@ -38,6 +38,11 @@ import ceremonyEn from './locales/en/ceremony.json';
 import ceremonyEs from './locales/es/ceremony.json';
 import ceremonyNl from './locales/nl/ceremony.json';
 
+// Import About translations
+import aboutEn from './locales/en/about.json';
+import aboutEs from './locales/es/about.json';
+import aboutNl from './locales/nl/about.json';
+
 const resources = {
     en: {
         header: headerEn,
@@ -47,6 +52,7 @@ const resources = {
         contact: contactEn,
         footer: footerEn,
         ceremony: ceremonyEn,
+        about: aboutEn,
     },
     es: {
         header: headerEs,
@@ -56,6 +62,7 @@ const resources = {
         contact: contactEs,
         footer: footerEs,
         ceremony: ceremonyEs,
+        about: aboutEs,
     },
     nl: {
         header: headerNl,
@@ -65,6 +72,7 @@ const resources = {
         contact: contactNl,
         footer: footerNl,
         ceremony: ceremonyNl,
+        about: aboutNl,
     },
 };
 
@@ -74,7 +82,7 @@ i18n
     .init({
         resources,
         fallbackLng: 'nl', // Idioma de respaldo
-        ns: ['header', 'home', 'party', 'comingSoon', 'contact', 'footer', 'ceremony'], // Declara todos tus namespaces
+        ns: ['header', 'home', 'party', 'comingSoon', 'contact', 'footer', 'ceremony', 'about'], // Declara todos tus namespaces
         defaultNS: 'header', // Namespace por defecto si no se especifica uno
         interpolation: {
             escapeValue: false, // React ya escapa los valores
@@ -104,6 +112,7 @@ type TranslationResources = {
     contact: typeof contactEn;
     footer: typeof footerEn;
     ceremony: typeof ceremonyEn;
+    about: typeof aboutEn;
 };
 
 declare module 'react-i18next' {
