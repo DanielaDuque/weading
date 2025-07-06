@@ -3,5 +3,26 @@
   "moreDetailsSoon": "Meer details volgen binnenkort",
   "receptionSectionTitle": "Locatie",
   "celebrationMessage": "We kijken ernaar uit om met jullie te vieren in Ravels, Vlaanderen, België!",
-  "mapMarkerTitle": "Locatie Bruiloftsfeest"
+  "mapMarkerTitle": "Locatie Bruiloftsfeest",
+  "todayIsWeddingDay": "We vieren nu onze bruiloft!",
+  "countdownDays": "{{days}} dagen",
+  "countdownHours": "{{hours}} uur",
+  "countdownMinutes": "{{minutes}} minuten",
+  "countdownSeconds": "{{seconds}} seconden",
+  "and": "en",
+  "partyDateLabel": "Datum: ",
+  "introText": "We zijn zo enthousiast om met jullie te vieren.",
+  "menuSectionTitle": "Menu",
+  "menuDetails": "We hebben een heerlijk menu samengesteld voor onze bruiloft. We hopen dat jullie ervan zullen genieten!",
+  "dressCodeSectionTitle": "Dresscode",
+  "dressCodeDetails": "We zouden het geweldig vinden als jullie in feestelijke kleding komen. Voel je vrij om iets speciaals te dragen!",
+  "schedule" : {
+    "title": "Schema",
+    "details": "Hier is het schema voor onze bruiloftsdag. We hopen dat jullie het leuk vinden!",
+    "welcome": "Aankomst gasten met dranken naar keuze",
+    "words": "Welkomstwoordje aan de gasten",
+    "buffet" : "Opening buffet",
+    "end": "Einde feest"
+  }
+
 }

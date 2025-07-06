@@ -47,6 +47,7 @@ function CountdownTimer(props: CountdownTimerProps) {
     if (timeLeft.days !== undefined && timeLeft.days > 0) {
         timerComponents.push(<span key="days">{t('countdownDays', { days: timeLeft.days })}</span>);
     }
+
     if (timeLeft.hours !== undefined && timeLeft.hours >= 0) {
         if (timerComponents.length > 0 && timeLeft.hours < 1 && timeLeft.days === 0 && (timeLeft.minutes || 0) > 0) {
             // Do nothing if hours are 0, days are 0, and minutes are present

@@ -17,7 +17,7 @@ interface TimelineEventProps {
     // It handles the common case where you import an icon like `FavoriteIcon`.
     icon: OverridableComponent<SvgIconTypeMap> & { muiName: string; };
     title: string;
-    description: string;
+    description?: string;
     imageUrl?: string; // This makes imageUrl an OPTIONAL prop
     imageAlt?: string; // This makes imageAlt an OPTIONAL prop
     imageHeight?: string; // This makes imageheight an OPTIONAL prop

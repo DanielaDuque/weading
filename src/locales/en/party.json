@@ -3,5 +3,23 @@
   "moreDetailsSoon": "More details soon",
   "receptionSectionTitle": "Location",
   "celebrationMessage": "We look forward to celebrating with you in Ravels, Flanders, Belgium!",
-  "mapMarkerTitle": "Reception Location"
+  "mapMarkerTitle": "Reception Location",
+  "todayIsWeddingDay": "We are celebrating our wedding party now!",
+  "countdownDays": "{{days}} days",
+  "countdownHours": "{{hours}} hours",
+  "countdownMinutes": "{{minutes}} minutes",
+  "countdownSeconds": "{{seconds}} seconds",
+  "and": "and",
+  "partyDateLabel": "Date: ",
+  "introText": "We are so excited to celebrate with you.",
+    "dressCodeSectionTitle": "Dress Code",
+    "dressCodeDetails": "We would love for you to come dressed up. Feel free to wear something special!",
+  "schedule": {
+    "title": "Programa",
+    "details": "Aquí está el programa para el día de nuestra boda. ¡Esperamos que lo disfruten!",
+    "welcome": "Llegada de invitados con bebidas a elegir",
+    "words": "Palabras de bienvenida a los invitados",
+    "buffet": "Apertura del buffet",
+    "end": "Fin de la fiesta"
+  }
 }
